@@ -12,4 +12,8 @@ export const Config = {
   General: {
     Port: process.env.PORT,
   },
+  Notion: {
+    Token: process.env.NOTION_TOKEN,
+    MaterialsDatabaseId: process.env.NOTION_MATERIALS_DATABASE_ID,
+  },
 };
