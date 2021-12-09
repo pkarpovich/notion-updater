@@ -1,5 +1,22 @@
 import { Client, LogLevel } from "@notionhq/client";
 
+const getCase = (string, regex) => string.match(regex) || {};
+
+const Rules = [
+  {
+    type: "LINE",
+    regex: /^\[(.*)]\((.*)\)/,
+  },
+  {
+    type: "TEXT",
+    regex: /^async function (.*)\(\) {/,
+  },
+  {
+    type: "TEXT",
+    regex: /}/,
+  },
+];
+
 export class NotionService {
   #notionClient = null;
 
@@ -63,5 +80,16 @@ export class NotionService {
         },
       ],
     });
+  }
+
+  mdLine2notionBlock(line) {
+    for (const rule of Rules) {
+      const match = line.match(rule.regex);
+      if (!match) {
+        continue;
+      }
+
+      console.log("test ", match3);
+    }
   }
 }

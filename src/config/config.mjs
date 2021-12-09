@@ -16,4 +16,8 @@ export const Config = {
     Token: process.env.NOTION_TOKEN,
     MaterialsDatabaseId: process.env.NOTION_MATERIALS_DATABASE_ID,
   },
+  Git: {
+    MaterialsRepository: process.env.GIT_MATERIALS_REPOSITORY,
+    TempFolder: process.env.GIT_TEMP_FOLDER,
+  },
 };
